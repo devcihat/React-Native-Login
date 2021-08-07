@@ -9,10 +9,10 @@ const PınScreen = ({ navigation }) => {
   const totalPins = 6;
 
   useEffect(() => {
-      if(pinCount === totalPins) {
-          navigation.navigate('Tabs')
-      }
-  },[pinCount])
+    if (pinCount === totalPins) {
+      navigation.navigate("Tabs");
+    }
+  }, [pinCount]);
 
   const renderPins = () => {
     const pins = [];
@@ -32,11 +32,11 @@ const PınScreen = ({ navigation }) => {
     return pins;
   };
 
-  const pressKey = (_,index) => {
-    setPinCount(prev => {
-        return index !=10 ? prev + 1 : prev - 1
-    })
-  }
+  const pressKey = (_, index) => {
+    setPinCount((prev) => {
+      return index != 10 ? prev + 1 : prev - 1;
+    });
+  };
 
   return (
     <Container>

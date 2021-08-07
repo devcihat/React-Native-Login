@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -29,21 +28,23 @@ const App = () => {
       let icon = "";
       const color = focused ? "#559dff" : "#828282";
       const size = 22;
-      console.clear()
-      console.log('object',route)
+      //console.clear()
+      //console.log('object',route)
 
       switch (route.name) {
-        case "SendRequest":
+        case "Cards":
           icon = "credit-card"
+         // console.log(icon)
         break;  
           
 
         default:
-          console.log("def",route.name)
+          //console.log("def",route.name)
           icon = "dashboard";
 
-          return <MaterialIcons name={icon} color={color} size={size} />;
+          
       }
+      return <MaterialIcons name={icon} color={color} size={size} />;
     },
   });
 
