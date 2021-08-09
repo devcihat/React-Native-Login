@@ -41,7 +41,7 @@ const PınScreen = ({ navigation }) => {
   return (
     <Container>
       <TextStyle center heavy title color="#964ff0" margin="32px 0 0 0">
-        mybank
+        My Bank
       </TextStyle>
       <TextStyle center heavy medium margin="32px 0 0 0">
         Enter Your PIN code.

@@ -9,7 +9,7 @@ const TouchScreen = ({navigation}) => {
   return (
     <Container>
       <TextStyle center heavy title color="#964ff0" margin="32px 0 0 0">
-        mybank
+        My Bank
       </TextStyle>
 
       <Touch onLongPress={() => navigation.navigate("Tabs")} delayPressIn={0} >
@@ -39,7 +39,7 @@ const TouchScreen = ({navigation}) => {
          </Fontisto>
       </PinAccess>
 
-      <StatusBar barStyle="light-content" />
+      <StatusBar barStyle="" />
     </Container>
   );
 };

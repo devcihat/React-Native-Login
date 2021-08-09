@@ -14,14 +14,7 @@ const App = () => {
   const AppStack = createStackNavigator();
   const TabStack = createBottomTabNavigator();
 
-  const tabBarOptions = {
-    showLabel: true,
-    style: {
-      backgroundColor: "#1e1e1e",
-      borderTopColor: "#1e1e1e",
-      paddingBottom: 32,
-    },
-  };
+  
 
   const screenOptions = ({ route }) => ({
     tabBarIcon: ({ focused }) => {
@@ -33,18 +26,26 @@ const App = () => {
 
       switch (route.name) {
         case "Cards":
-          icon = "credit-card"
-         // console.log(icon)
-        break;  
-          
+          icon = "credit-card";
+          // console.log(icon)
+          break;
+
+          case "SendRequest":
+            icon = "send";
+            // console.log(icon)
+            break;
 
         default:
           //console.log("def",route.name)
           icon = "dashboard";
-
-          
       }
       return <MaterialIcons name={icon} color={color} size={size} />;
+    },
+    headerShown: false,
+    tabBarStyle: {
+      backgroundColor: "#1e1e1e",
+      borderTopColor: "#1e1e1e",
+      paddingBottom: 32,
     },
   });
 
@@ -52,11 +53,10 @@ const App = () => {
     return (
       <TabStack.Navigator
         screenOptions={screenOptions}
-        tabBarOptions={tabBarOptions}
       >
         <TabStack.Screen name="Home" component={HomeScreen} />
-        <TabStack.Screen name="SendRequest" component={SendRequestScreen} />
-        <TabStack.Screen name="Cards" component={CardsScreen} />
+        <TabStack.Screen name="SendRequest" component={SendRequestScreen} options={{title:"Send & Request"}} />
+        <TabStack.Screen name="Cards" component={CardsScreen} options={{title:"My Cards"}} />
       </TabStack.Navigator>
     );
   };
