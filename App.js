@@ -45,7 +45,6 @@ const App = () => {
     tabBarStyle: {
       backgroundColor: "#1e1e1e",
       borderTopColor: "#1e1e1e",
-      paddingBottom: 32,
     },
   });
 
