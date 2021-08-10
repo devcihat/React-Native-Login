@@ -14,8 +14,6 @@ const App = () => {
   const AppStack = createStackNavigator();
   const TabStack = createBottomTabNavigator();
 
-  
-
   const screenOptions = ({ route }) => ({
     tabBarIcon: ({ focused }) => {
       let icon = "";
@@ -30,10 +28,10 @@ const App = () => {
           // console.log(icon)
           break;
 
-          case "SendRequest":
-            icon = "send";
-            // console.log(icon)
-            break;
+        case "SendRequest":
+          icon = "send";
+          // console.log(icon)
+          break;
 
         default:
           //console.log("def",route.name)
@@ -50,12 +48,19 @@ const App = () => {
 
   const TabStackScreens = () => {
     return (
-      <TabStack.Navigator
-        screenOptions={screenOptions}
-      >
+      <TabStack.Navigator screenOptions={screenOptions}>
         <TabStack.Screen name="Home" component={HomeScreen} />
-        <TabStack.Screen name="SendRequest" component={SendRequestScreen} options={{title:"Send & Request"}} />
-        <TabStack.Screen name="Cards" component={CardsScreen} options={{title:"My Cards"}} />
+        <TabStack.Screen
+          name="SendRequest"
+          component={SendRequestScreen}
+          options={{ title: "Send & Request" }}
+        />
+
+        <TabStack.Screen
+          name="Cards"
+          component={CardsScreen}
+          options={{ title: "My Cards" }}
+        />
       </TabStack.Navigator>
     );
   };
@@ -63,8 +68,8 @@ const App = () => {
   return (
     <NavigationContainer>
       <AppStack.Navigator headerMode="none">
-        <AppStack.Screen name="Pin" component={PınScreen} />
         <AppStack.Screen name="Touch" component={TouchScreen} />
+        <AppStack.Screen name="Pin" component={PınScreen} />
         <AppStack.Screen name="Tabs" component={TabStackScreens} />
       </AppStack.Navigator>
     </NavigationContainer>

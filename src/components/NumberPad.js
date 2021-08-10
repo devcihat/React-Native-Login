@@ -52,5 +52,5 @@ align-items:center
 justify-content:center
 margin:5px 20px
 border-width:1px
-border-color:#ffffff20
+border-color:#ffffff
 `;
