@@ -2,23 +2,25 @@ import React from "react";
 import styled from "styled-components";
 import TextStyle from "../components/Text";
 import { FontAwesome5, MaterialIcons, AntDesign } from "@expo/vector-icons";
-import purchasesData from "../../purchases"
-import {LineChart} from "react-native-chart-kit"
+import purchasesData from "../../purchases";
+import { LineChart } from "react-native-chart-kit";
 import { Dimensions } from "react-native";
 
 const HomeScreen = () => {
-
-
-  const renderPurchase = ({item}) => (
+  const renderPurchase = ({ item }) => (
     <Purchase>
       <PurchaseInfo>
         <TextStyle>{item.product}</TextStyle>
-        <TextStyle bold margin="2px 0 2px 0">{item.store}</TextStyle>
-        <TextStyle small color="#727479">{item.address}</TextStyle>
+        <TextStyle bold margin="2px 0 2px 0">
+          {item.store}
+        </TextStyle>
+        <TextStyle small color="#727479">
+          {item.address}
+        </TextStyle>
       </PurchaseInfo>
       <TextStyle heavy>{item.price}</TextStyle>
     </Purchase>
-  )
+  );
 
   return (
     <Container>
@@ -41,35 +43,36 @@ const HomeScreen = () => {
       </TextStyle>
 
       <Chart>
-        <LineChart data={{
-          labels:["May","June","July","Aug","Sept","Oct"],
-          datasets: [
-            {
-              data: [
-                Math.random() * 10,
-                Math.random() * 10,
-                Math.random() * 10,
-                Math.random() * 10,
-                Math.random() * 10,
-                Math.random() * 10
-              ]
-            }
-          ]
-        }}
-        width={Dimensions.get("window").width}
-        height={250}
-        yAxisLabel="$"
-        yAxisSuffix="k"
-        chartConfig={{
-          backgroundGradientFrom:"#1e1e1e",
-          backgroundGradientTo:"#1e1e1e",
-          color:(opacity = 1) => `rgba(81,150,244,${opacity})`,
-          labelColor: () => `rgba(255,255,255,0.2)`,
-          strokeWidth:3
-        }}
-        withVerticalLines={false}
-        withHorizontalLines={false}
-        bezier
+        <LineChart
+          data={{
+            labels: ["May", "June", "July", "Aug", "Sept", "Oct"],
+            datasets: [
+              {
+                data: [
+                  Math.random() * 10,
+                  Math.random() * 10,
+                  Math.random() * 10,
+                  Math.random() * 10,
+                  Math.random() * 10,
+                  Math.random() * 10,
+                ],
+              },
+            ],
+          }}
+          width={Dimensions.get("window").width}
+          height={250}
+          yAxisLabel="$"
+          yAxisSuffix="k"
+          chartConfig={{
+            backgroundGradientFrom: "#1e1e1e",
+            backgroundGradientTo: "#1e1e1e",
+            color: (opacity = 1) => `rgba(81,150,244,${opacity})`,
+            labelColor: () => `rgba(255,255,255,0.2)`,
+            strokeWidth: 3,
+          }}
+          withVerticalLines={false}
+          withHorizontalLines={false}
+          bezier
         />
       </Chart>
 
@@ -86,7 +89,9 @@ const HomeScreen = () => {
             </SearchContainer>
           </>
         }
-        data={purchasesData} renderItem={renderPurchase} showsVerticalScrollIndicator={false}
+        data={purchasesData}
+        renderItem={renderPurchase}
+        showsVerticalScrollIndicator={false}
       />
 
       <StatusBar barStyle="light-content" />
@@ -130,15 +135,13 @@ border-bottom-width:1px
 border-bottom-color:#393939;
 padding-bottom:12px
 margin-bottom:12px
-`
+`;
 
-const PurchaseInfo = styled.View`
-
-`
+const PurchaseInfo = styled.View``;
 
 const Chart = styled.View`
-margin:32px 0;
-`
+  margin: 32px 0;
+`;
 
 const TransactionsHeader = styled.View`
   flex-direction: row;

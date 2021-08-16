@@ -39,7 +39,7 @@ const TouchScreen = ({navigation}) => {
          </Fontisto>
       </PinAccess>
 
-      <StatusBar barStyle="" />
+      <StatusBar barStyle="light-content" />
     </Container>
   );
 };

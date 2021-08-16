@@ -2,35 +2,35 @@ import React from "react";
 import styled from "styled-components";
 import TextStyle from "../components/Text";
 
-const CardsScreen = (props) => {
+const CardsScreen = () => {
   const myCards = [
     {
       id: "1",
       color: "#5750F0",
       number: "1234",
       exp: "10/2020",
-      //logo
+      logo:require('../../assets/icon.png')
     },
     {
       id: "2",
       color: "#C84FF1",
       number: "5678",
       exp: "08/2022",
-      //logo
+      logo:require('../../assets/icon.png')
     },
     {
       id: "3",
       color: "#5298F7",
       number: "9012",
       exp: "04/2023",
-      //logo
+      logo:require('../../assets/icon.png')
     },
     {
-      id: "1",
+      id: "4",
       color: "#974FF2",
       number: "3456",
       exp: "12/2020",
-      //logo
+      logo:require('../../assets/icon.png')
     },
   ];
 
@@ -38,7 +38,7 @@ const CardsScreen = (props) => {
     <CardContainer>
       <CardInfo>
         <CardLogoContainer>
-          <CardLogo />
+          <CardLogo source={item.logo} resizeMode="contain" />
         </CardLogoContainer>
         <CardDetails>
           <TextStyle>
